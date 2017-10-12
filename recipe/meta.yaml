@@ -14,28 +14,42 @@ source:
     - https://cran.r-project.org/src/contrib/Archive/lazyeval/lazyeval_{{ version }}.tar.gz
   sha256: 13738f55b2044184fe91f53d17516a445dfb508227527921218cda6f01f98dcb
 
+
+  # patches:
+   # List any patch files here
+   # - fix.patch
+
 build:
+  # If this is a new build for the same version, increment the build number.
   number: 0
 
+  # This is required to make R link correctly on Linux.
   rpaths:
     - lib/R/lib/
     - lib/
 
+# Suggests: knitr, rmarkdown (>= 0.2.65), testthat, covr
 requirements:
   build:
-    - {{ compiler('c') }}  # [not win]
     - r-base
-    - posix                # [win]
-    - {{native}}toolchain  # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{native}}toolchain        # [win]
 
   run:
     - r-base
-    - {{native}}gcc-libs   # [win]
+    - {{native}}gcc-libs         # [win]
 
 test:
   commands:
-    - $R -e "library('lazyeval')"  # [not win]
+    # You can put additional test commands to be run here.
+    - $R -e "library('lazyeval')"           # [not win]
     - "\"%R%\" -e \"library('lazyeval')\""  # [win]
+
+  # You can also put a file called run_test.py, run_test.sh, or run_test.bat
+  # in the recipe that will be run at test time.
+
+  # requires:
+    # Put any additional test requirements here.
 
 about:
   home: https://CRAN.R-project.org/package=lazyeval
@@ -49,3 +63,28 @@ extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - mingwandroid
+
+# The original CRAN metadata for this package was:
+
+# Package: lazyeval
+# Version: 0.2.0
+# Title: Lazy (Non-Standard) Evaluation
+# Description: An alternative approach to non-standard evaluation using formulas. Provides a full implementation of LISP style 'quasiquotation', making it easier to generate code with other code.
+# Authors@R: c( person("Hadley", "Wickham", ,"hadley@rstudio.com", c("aut", "cre")), person("RStudio", role = "cph") )
+# License: GPL-3
+# LazyData: true
+# Depends: R (>= 3.1.0)
+# Suggests: knitr, rmarkdown (>= 0.2.65), testthat, covr
+# VignetteBuilder: knitr
+# RoxygenNote: 5.0.1
+# NeedsCompilation: yes
+# Packaged: 2016-06-10 21:38:52 UTC; hadley
+# Author: Hadley Wickham [aut, cre], RStudio [cph]
+# Maintainer: Hadley Wickham <hadley@rstudio.com>
+# Repository: CRAN
+# Date/Publication: 2016-06-12 19:03:08
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
