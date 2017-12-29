@@ -1,4 +1,4 @@
-{% set version = '0.2.0' %}
+{% set version = '0.2.1' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/lazyeval_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/lazyeval/lazyeval_{{ version }}.tar.gz
-  sha256: 13738f55b2044184fe91f53d17516a445dfb508227527921218cda6f01f98dcb
+  sha256: 83b3a43e94c40fe7977e43eb607be0a3cd64c02800eae4f2774e7866d1e93f61
 
 
   # patches:
@@ -70,7 +70,7 @@ extra:
 # The original CRAN metadata for this package was:
 
 # Package: lazyeval
-# Version: 0.2.0
+# Version: 0.2.1
 # Title: Lazy (Non-Standard) Evaluation
 # Description: An alternative approach to non-standard evaluation using formulas. Provides a full implementation of LISP style 'quasiquotation', making it easier to generate code with other code.
 # Authors@R: c( person("Hadley", "Wickham", ,"hadley@rstudio.com", c("aut", "cre")), person("RStudio", role = "cph") )
@@ -79,13 +79,13 @@ extra:
 # Depends: R (>= 3.1.0)
 # Suggests: knitr, rmarkdown (>= 0.2.65), testthat, covr
 # VignetteBuilder: knitr
-# RoxygenNote: 5.0.1
+# RoxygenNote: 6.0.1
 # NeedsCompilation: yes
-# Packaged: 2016-06-10 21:38:52 UTC; hadley
+# Packaged: 2017-10-18 22:37:44 UTC; lionel
 # Author: Hadley Wickham [aut, cre], RStudio [cph]
 # Maintainer: Hadley Wickham <hadley@rstudio.com>
 # Repository: CRAN
-# Date/Publication: 2016-06-12 19:03:08
+# Date/Publication: 2017-10-29 22:59:36 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
