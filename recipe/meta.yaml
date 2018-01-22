@@ -10,8 +10,8 @@ package:
 source:
   fn: lazyeval_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/lazyeval_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/lazyeval/lazyeval_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/lazyeval_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/lazyeval/lazyeval_{{ version }}.tar.gz
   sha256: 83b3a43e94c40fe7977e43eb607be0a3cd64c02800eae4f2774e7866d1e93f61
 
 
