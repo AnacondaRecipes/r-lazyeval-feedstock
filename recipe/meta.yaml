@@ -1,4 +1,4 @@
-{% set version = '0.2.1' %}
+{% set version = '0.2.2' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,7 +11,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/lazyeval_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/lazyeval/lazyeval_{{ version }}.tar.gz
-  sha256: 83b3a43e94c40fe7977e43eb607be0a3cd64c02800eae4f2774e7866d1e93f61
+  sha256: d6904112a21056222cfcd5eb8175a78aa063afe648a562d9c42c6b960a8820d4
 
 build:
   merge_build_host: True  # [win]
@@ -60,6 +60,7 @@ about:
     implementation of LISP style 'quasiquotation', making it easier to generate code
     with other code.
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
@@ -70,7 +71,7 @@ extra:
 # The original CRAN metadata for this package was:
 
 # Package: lazyeval
-# Version: 0.2.1
+# Version: 0.2.2
 # Title: Lazy (Non-Standard) Evaluation
 # Description: An alternative approach to non-standard evaluation using formulas. Provides a full implementation of LISP style 'quasiquotation', making it easier to generate code with other code.
 # Authors@R: c( person("Hadley", "Wickham", ,"hadley@rstudio.com", c("aut", "cre")), person("RStudio", role = "cph") )
@@ -79,13 +80,13 @@ extra:
 # Depends: R (>= 3.1.0)
 # Suggests: knitr, rmarkdown (>= 0.2.65), testthat, covr
 # VignetteBuilder: knitr
-# RoxygenNote: 6.0.1
+# RoxygenNote: 6.1.1
 # NeedsCompilation: yes
-# Packaged: 2017-10-18 22:37:44 UTC; lionel
+# Packaged: 2019-03-15 14:18:01 UTC; lionel
 # Author: Hadley Wickham [aut, cre], RStudio [cph]
 # Maintainer: Hadley Wickham <hadley@rstudio.com>
 # Repository: CRAN
-# Date/Publication: 2017-10-29 22:59:36 UTC
+# Date/Publication: 2019-03-15 17:50:07 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
